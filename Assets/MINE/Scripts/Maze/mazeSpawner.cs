@@ -167,11 +167,13 @@ namespace MazeGeneration
 				{
 					if (mazeString[i][j] != ' ')
 					{ 
-						UnityEngine.Object.Instantiate(_wall, new Vector3(iA, heightWall/2.0f, jA), Quaternion.identity);
+						UnityEngine.Object.Instantiate(_wall, new Vector3(iA, -heightWall/2.0f, jA), Quaternion.identity);
+						// y original = heightWall/2.0f
 					}
 				}
 			}
-			UnityEngine.Object.Instantiate(_wall, new Vector3(iA-widthWall, heightWall/2.0f, jA), Quaternion.identity);
+			UnityEngine.Object.Instantiate(_wall, new Vector3(iA-widthWall, -heightWall/2.0f, jA), Quaternion.identity);
+			// y original heightWall/2.0f
 		}		
 	}
 }

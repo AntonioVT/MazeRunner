@@ -4,7 +4,7 @@ using System.Collections;
 public class safeZone : MonoBehaviour {
 
 	public GameObject mazeWallSZ;
-
+	
 	void Start () {
 		Vector3 myPosition = transform.position;
 		Vector3 myScale = transform.localScale;
@@ -19,6 +19,7 @@ public class safeZone : MonoBehaviour {
 		int times = (int) Mathf.Ceil(myScale.x/mazeWallSZScale.x);
 		float xA = 0.0f;
 		
+		
 		for (int i = 0; i < times; i++, xA+=4)
 		{
 			if (!(i > (times/2.0f)-3 && i < (times/2.0f)+3))
@@ -31,5 +32,6 @@ public class safeZone : MonoBehaviour {
 		}
 		UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(xx-xA, mazeWallSZScale.y/2.0f, zz), Quaternion.identity);
 		UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(x+xA, mazeWallSZScale.y/2.0f, z), Quaternion.identity);
+		
 	}
 }
