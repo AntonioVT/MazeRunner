@@ -274,6 +274,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738fc6fd7eab0844fb74c86e77ac4357, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipOpen: {fileID: 7400000, guid: 89e5fd8e5a0d2c544bf702ac3ced70c0, type: 2}
-  clipClose: {fileID: 7400000, guid: ec0758cafebc3ed4c86f6a070bdcc9b3, type: 2}
+  clips: []
   anim: {fileID: 111000010137831062}
