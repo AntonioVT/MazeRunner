@@ -24,6 +24,7 @@ GameObject:
   - 64: {fileID: 64000010597531026}
   - 114: {fileID: 114000011177012132}
   - 111: {fileID: 111000010137831062}
+  - 208: {fileID: 208000013870200624}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -44,6 +45,7 @@ GameObject:
   - 82: {fileID: 82000010768973244}
   - 64: {fileID: 64000010933705396}
   - 114: {fileID: 114000011872336022}
+  - 208: {fileID: 208000011058271162}
   m_Layer: 0
   m_Name: gateway
   m_TagString: Untagged
@@ -290,3 +292,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5707e756c3af0384dbe334bfb8c8e403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &208000011058271162
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013465773618}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 12.186001, y: 12.476001, z: 7.4860005}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 11.981001, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!208 &208000013870200624
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013104708188}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.3520001, y: 3.509, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -1.353, y: 1.6040001, z: -0.223}
+  m_TimeToStationary: 0.5

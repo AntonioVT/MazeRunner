@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: 2c0011617ee7c4445b42c94392ae6ed1
-timeCreated: 1480727326
+timeCreated: 1480784326
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - burningEffect: {instanceID: 0}
+  - burningEffect: {fileID: 1000010682264780, guid: 375162ce98a0f134588666ab26c1dc3f,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

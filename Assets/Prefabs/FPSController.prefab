@@ -1299,7 +1299,7 @@ MonoBehaviour:
   prefBullet: {fileID: 1000010114724498, guid: 530266da3665cf04caffffae64b67588, type: 2}
   prefGrenade: {fileID: 1000010114724498, guid: 4994e6d261f9eb84c923ece49477795c,
     type: 2}
-  prefFire: {fileID: 1000010114724498, guid: 4994e6d261f9eb84c923ece49477795c, type: 2}
+  prefFire: {fileID: 1000011093591430, guid: e92f160346ad46449b854b28a1edc37d, type: 2}
   fForce: 2200
   fBulletLifeTime: 1.3333
   iDistance: 5

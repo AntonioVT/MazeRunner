@@ -267,8 +267,6 @@ public class mazeSpawner : MonoBehaviour
 	}
 	
 	void InstanciateStuff(){
-
-		
 		// Instanciar Monster Spwner
 		for (int i = 0; i < connectMazePos.Count; i+=2){
 			UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(connectMazePos[i].x, 3.0f,connectMazePos[i].y), Quaternion.identity);
@@ -281,6 +279,9 @@ public class mazeSpawner : MonoBehaviour
 		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3( 80, 3, 187), Quaternion.identity);
 		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(165, 3, 245), Quaternion.identity);
 		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(165, 3,  80), Quaternion.identity);
+		
+		//
+		//ToggleDoor
 	}
 	
 	void ConnectMaze()
