@@ -30,6 +30,11 @@ public class FirstPersonShooter : MonoBehaviour
     public float fBulletLifeTime = 1.3333f;
     public int iDistance;
     private int iGunPoint = 0;
+	
+	private float pistolCooldown = 0;
+	private float shotgunCooldown = 0;
+	private float flameThrowerCooldown = 0;
+	private float grenadeLauncherCooldown = 0;
 
     private FirstPersonSFX firstPersonSFX;
     [Header("Misc")]
@@ -63,7 +68,7 @@ public class FirstPersonShooter : MonoBehaviour
                 ShootGeneric(animGrenadeLauncher, tGLPoint, prefBullet);
                 break;
             case 3:
-                ShootGeneric(animGrenadeLauncher, tGLPoint, prefFire);
+                ShootFlameThrower(animGrenadeLauncher, tGLPoint, prefFire);
                 break;
         }
     }
@@ -80,7 +85,9 @@ public class FirstPersonShooter : MonoBehaviour
     void ShootPistol()
     {
         // Dual pistols
-        if (Input.GetButtonDown("Fire1"))
+		if (pistolCooldown > 0)
+			pistolCooldown -= Time.deltaTime;
+        if (Input.GetButton("Fire1") && pistolCooldown <= 0)
         {
             // Adm. de efectos de sonido
             firstPersonSFX.PlayGunShot();
@@ -94,13 +101,16 @@ public class FirstPersonShooter : MonoBehaviour
             // Actualizar pistolas
             iGunPoint++;
             iGunPoint = iGunPoint % 2;
+			pistolCooldown = 0.20f;
         }
     }
 
     void ShootShotgun()
     {
         // Shotgun
-        if (Input.GetButtonDown("Fire1"))
+		if (shotgunCooldown > 0)
+			shotgunCooldown -= Time.deltaTime;
+        if (Input.GetButton("Fire1") && shotgunCooldown <= 0)
         {
             // Adm. de efectos de sonido
             firstPersonSFX.PlayGunShot();
@@ -111,13 +121,15 @@ public class FirstPersonShooter : MonoBehaviour
             // Disparar proyectil
             Shoot(tShotgunPointA, prefBullet);
             Shoot(tShotgunPointB, prefBullet);
+			shotgunCooldown = 1;
         }
     }
 
-    void ShootGeneric(Animation animGeneric, Transform tPoint, GameObject prefab)
+	void ShootFlameThrower(Animation animGeneric, Transform tPoint, GameObject prefab)
     {
-        // Generic Launcher
-        if (Input.GetButtonDown("Fire1"))
+		if (flameThrowerCooldown > 0)
+			flameThrowerCooldown -= Time.deltaTime;
+        if (Input.GetButton("Fire1") && flameThrowerCooldown <= 0)
         {
             // Adm. de efectos de sonido
             firstPersonSFX.PlayGunShot();
@@ -127,6 +139,26 @@ public class FirstPersonShooter : MonoBehaviour
 
             // Disparar proyectil
             Shoot(tPoint, prefab);
+			flameThrowerCooldown = 0.05f;
+        }
+    }
+	
+    void ShootGeneric(Animation animGeneric, Transform tPoint, GameObject prefab)
+    {
+        // Generic Launcher
+		if (grenadeLauncherCooldown > 0)
+			grenadeLauncherCooldown -= Time.deltaTime;
+        if (Input.GetButton("Fire1") && grenadeLauncherCooldown <= 0)
+        {
+            // Adm. de efectos de sonido
+            firstPersonSFX.PlayGunShot();
+
+            //Animar
+            AnimateGun(animGeneric);
+
+            // Disparar proyectil
+            Shoot(tPoint, prefab);
+			grenadeLauncherCooldown = 2;
         }
     }
 

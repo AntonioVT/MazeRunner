@@ -1610,6 +1610,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fHealth: 25
+  burningEffect: {fileID: 1000010682264780, guid: 375162ce98a0f134588666ab26c1dc3f,
+    type: 2}
 --- !u!114 &114000011644997396
 MonoBehaviour:
   m_ObjectHideFlags: 1

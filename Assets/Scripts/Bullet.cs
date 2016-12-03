@@ -9,10 +9,12 @@ public class Bullet : MonoBehaviour
 
     public void SpawnExplosion()
     {
-        GameObject goExpl = Instantiate(goExplosion, transform.position, Quaternion.identity) as GameObject;
-        Destroy(goExpl, 2.0f);
-        Destroy(this.gameObject);
-    }
+		if(goExplosion != null){
+			GameObject goExpl = Instantiate(goExplosion, transform.position, Quaternion.identity) as GameObject;
+			Destroy(goExpl, 2.0f);
+			Destroy(this.gameObject);
+		}
+	}
 
     public IEnumerator BulletAliveTime(float fWaitingTime)
     {

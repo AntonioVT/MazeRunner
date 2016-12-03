@@ -1,10 +1,19 @@
 fileFormatVersion: 2
 guid: c50ce1954fa410c48845591c7ed95bbf
-timeCreated: 1477352146
+timeCreated: 1480722557
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tShotgunPointA: {instanceID: 0}
+  - tShotgunPointB: {instanceID: 0}
+  - animShotgun: {instanceID: 0}
+  - tGLPoint: {instanceID: 0}
+  - animGrenadeLauncher: {instanceID: 0}
+  - prefBullet: {instanceID: 0}
+  - prefGrenade: {instanceID: 0}
+  - prefFire: {instanceID: 0}
+  - tHandGrenade: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

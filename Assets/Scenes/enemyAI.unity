@@ -567,6 +567,22 @@ Prefab:
       propertyPath: m_Name
       value: FPSControllerMain
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010970651230, guid: e8854b50a3fb8074fa91481a49936052,
+        type: 2}
+      propertyPath: prefFire
+      value: 
+      objectReference: {fileID: 1000011093591430, guid: e92f160346ad46449b854b28a1edc37d,
+        type: 2}
+    - target: {fileID: 114000010440266066, guid: e8854b50a3fb8074fa91481a49936052,
+        type: 2}
+      propertyPath: aFireShot
+      value: 
+      objectReference: {fileID: 8300000, guid: c660621640dcee94c98c99ad50e00d60, type: 3}
+    - target: {fileID: 82000011050365766, guid: e8854b50a3fb8074fa91481a49936052,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e8854b50a3fb8074fa91481a49936052, type: 2}
   m_IsPrefabParent: 0
