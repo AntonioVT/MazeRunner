@@ -24,7 +24,7 @@ public class monsterSpawner : MonoBehaviour {
 		NavMeshAgent nva = newMonster.GetComponent<NavMeshAgent>();
 		nva.speed = 11.0f - (monsterScale * 2);
 		
-		Wait (10.0f, () => {
+		Wait (5.0f, () => {
 			SpawnMonsters();
 		});
 	}

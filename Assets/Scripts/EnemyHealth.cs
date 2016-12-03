@@ -57,6 +57,8 @@ public class EnemyHealth : MonoBehaviour {
 
     void DestroyMonster()
     {
+        GameManager.Instance.iScore += 50;
+        GameManager.Instance.UpdateScore();
         Destroy(this.gameObject);
     }
 }

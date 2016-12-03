@@ -31,6 +31,11 @@ public class GameManager : Singleton<GameManager>
         uiManager.UpdateScore(iScore);
     }
 
+    public void UpdateScore()
+    {
+        uiManager.UpdateScore(iScore);
+    }
+
     public void DamagePlayer(int iDamage)
     {
         iHealth -= iDamage;
@@ -61,7 +66,7 @@ public class GameManager : Singleton<GameManager>
         else
         {
             Debug.Log("Lose");
-            //SceneManager.LoadScene("_loseScene");
+            SceneManager.LoadScene("loseScene");
         }
     }
 }
