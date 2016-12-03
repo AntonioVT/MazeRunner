@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
     public int iScore = 0;
     public bool isPlaying = true;
 
-    public void Start()
+    public void SetReferences()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

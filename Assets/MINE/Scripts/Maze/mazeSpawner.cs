@@ -2,6 +2,7 @@
 using System;
 using System.Text;
 using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 
 public struct IntVector2 {
@@ -184,6 +185,8 @@ public class mazeSpawner : MonoBehaviour
 	public GameObject mazeFloor;
 	public GameObject mazeCenter;
 	public GameObject player;
+	public GameObject monsterSpawner;
+	public GameObject mazeGates;
 	public int mazeSizeX;
 	public int mazeSizeY;
 	public List<Vector2> connectMazePos = new List<Vector2>();
@@ -238,7 +241,46 @@ public class mazeSpawner : MonoBehaviour
 		UnityEngine.Object.Instantiate(mazeCenter, mazeCenterPos, Quaternion.identity);
 
 		// Instanciar al player en Safe Zone
-		UnityEngine.Object.Instantiate(player, mazeCenterPos, Quaternion.identity);
+		GameManager.Instance.goPlayer =  UnityEngine.Object.Instantiate(player, mazeCenterPos, Quaternion.identity) as GameObject;
+		GameManager.Instance.SetReferences();
+		
+		// Instanciar Gates
+		Vector3 gateScale = mazeGates.transform.localScale;
+		UnityEngine.Object.Instantiate(mazeGates, new Vector3(162.19f, -24.0f, 203.54f), Quaternion.Euler(0, 180, 0));
+		UnityEngine.Object.Instantiate(mazeGates, new Vector3(162.19f, -24.0f, 120.06f), Quaternion.Euler(0,   0, 0));
+		UnityEngine.Object.Instantiate(mazeGates, new Vector3(120.16f, -24.0f, 162.33f), Quaternion.Euler(0,  90, 0));
+		UnityEngine.Object.Instantiate(mazeGates, new Vector3(204.00f, -24.0f, 162.33f), Quaternion.Euler(0, 270, 0));
+		
+		/// Cambiar a evento
+		Wait (8.0f, () => {
+			InstanciateStuff();
+		});
+
+	}
+	
+	void Wait(float seconds, Action action){
+		StartCoroutine(_wait(seconds, action));
+	}
+	IEnumerator _wait(float time, Action callback){
+		yield return new WaitForSeconds(time);
+		callback();
+	}
+	
+	void InstanciateStuff(){
+
+		
+		// Instanciar Monster Spwner
+		for (int i = 0; i < connectMazePos.Count; i+=2){
+			UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(connectMazePos[i].x, 3.0f,connectMazePos[i].y), Quaternion.identity);
+		}
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3( 72, 3, 270), Quaternion.identity);
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3( 80, 3,  42), Quaternion.identity);
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(275, 3,  42), Quaternion.identity);
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(275, 3, 270), Quaternion.identity);
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(270, 3, 137), Quaternion.identity);
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3( 80, 3, 187), Quaternion.identity);
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(165, 3, 245), Quaternion.identity);
+		UnityEngine.Object.Instantiate(monsterSpawner, new Vector3(165, 3,  80), Quaternion.identity);
 	}
 	
 	void ConnectMaze()

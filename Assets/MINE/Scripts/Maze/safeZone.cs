@@ -24,14 +24,14 @@ public class safeZone : MonoBehaviour {
 		{
 			if (!(i > (times/2.0f)-3 && i < (times/2.0f)+3))
 			{
-				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(xx-xA, mazeWallSZScale.y/2.0f, zz), Quaternion.identity);
-				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(x+xA, mazeWallSZScale.y/2.0f, z), Quaternion.identity);
-				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(x, mazeWallSZScale.y/2.0f, z+xA), Quaternion.identity);
-				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(xx, mazeWallSZScale.y/2.0f, zz-xA), Quaternion.identity);
+				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(xx-xA, -mazeWallSZScale.y/2.0f, zz), Quaternion.identity);
+				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(x+xA, -mazeWallSZScale.y/2.0f, z), Quaternion.identity);
+				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(x, -mazeWallSZScale.y/2.0f, z+xA), Quaternion.identity);
+				UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(xx, -mazeWallSZScale.y/2.0f, zz-xA), Quaternion.identity);
 			}
 		}
-		UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(xx-xA, mazeWallSZScale.y/2.0f, zz), Quaternion.identity);
-		UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(x+xA, mazeWallSZScale.y/2.0f, z), Quaternion.identity);
+		UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(xx-xA, -mazeWallSZScale.y/2.0f, zz), Quaternion.identity);
+		UnityEngine.Object.Instantiate(mazeWallSZ, new Vector3(x+xA, -mazeWallSZScale.y/2.0f, z), Quaternion.identity);
 		
 	}
 }
