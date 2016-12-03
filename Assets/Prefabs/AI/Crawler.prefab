@@ -866,7 +866,7 @@ GameObject:
   - 114: {fileID: 114000013813429026}
   - 54: {fileID: 54000011277285322}
   - 114: {fileID: 114000013436933152}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crawler
   m_TagString: Enemy
   m_Icon: {fileID: 0}

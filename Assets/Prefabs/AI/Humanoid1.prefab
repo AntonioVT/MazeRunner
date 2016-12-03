@@ -580,7 +580,7 @@ GameObject:
   - 65: {fileID: 65000012751747362}
   - 54: {fileID: 54000013921788290}
   - 114: {fileID: 114000010082420170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Humanoid1
   m_TagString: Enemy
   m_Icon: {fileID: 0}

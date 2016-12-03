@@ -17,14 +17,14 @@ public class monsterSpawner : MonoBehaviour {
 		GameObject[] allMonsters = { Crawler, JavaFace, RippedDude };
 		GameObject randomMonster = allMonsters[UnityEngine.Random.Range(0, allMonsters.Length)];
 		GameObject newMonster = UnityEngine.Object.Instantiate(randomMonster, transform.position, Quaternion.identity) as GameObject;
-		float monsterScale = (float) UnityEngine.Random.Range(1, 5);
+		float monsterScale = (float) UnityEngine.Random.Range(1, 4);
 		newMonster.transform.localScale = new Vector3(monsterScale, monsterScale, monsterScale);
 		FollowPlayer fp = newMonster.GetComponent<FollowPlayer>();
 		fp.player = GameManager.Instance.goPlayer.transform;
 		NavMeshAgent nva = newMonster.GetComponent<NavMeshAgent>();
 		nva.speed = 11.0f - (monsterScale * 2);
 		
-		Wait (5.0f, () => {
+		Wait (8.0f, () => {
 			SpawnMonsters();
 		});
 	}

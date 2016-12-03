@@ -430,7 +430,7 @@ GameObject:
   - 114: {fileID: 114000011644997396}
   - 54: {fileID: 54000014166824340}
   - 114: {fileID: 114000010714252564}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Humanoid2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
